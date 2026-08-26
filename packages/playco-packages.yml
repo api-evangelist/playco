@@ -1,0 +1,69 @@
+generated: '2026-08-26'
+method: searched
+source: >-
+  registry.npmjs.org metadata endpoints + api.github.com/orgs/play-co; ownership confirmed because
+  github.com/gameclosure/<repo> 301-redirects to github.com/play-co/<repo> (the Game Closure organization
+  was renamed to Playco; api.github.com/orgs/play-co reports name "Playco", blog https://play.co).
+note: >-
+  Playco publishes NO API client SDKs, because it publishes no API. Everything below is first-party
+  open-source GAME ENGINE / BUILD TOOLING inherited from Game Closure, and every one of them is abandoned:
+  the newest release in the set is ff 0.2.2 from 2017-06-29 and the flagship devkit has not shipped since
+  2016-03-02. The products Playco actually markets on play.co/tech — GCInstant (platform-SDK wrapper),
+  Replicant (backend-as-a-service state management for instant games) and Odie3D — are NOT published to npm
+  under any name or scope, and there is no @play-co or @playco npm scope owned by this company. No `SDKs`
+  pointer is emitted: these are not API client libraries and awarding sdk_count for them would be false credit.
+sdk_count: 0
+package_count: 3
+packages:
+- language: javascript
+  registry: npm
+  name: devkit
+  url: https://www.npmjs.com/package/devkit
+  install: npm install devkit
+  official: true
+  version: 3.1.3
+  published: '2016-03-02'
+  repository: https://github.com/play-co/devkit
+  kind: game-engine
+  note: HTML5 game platform for browser and mobile; docs host docs.gameclosure.com no longer resolves.
+- language: javascript
+  registry: npm
+  name: jsio
+  url: https://www.npmjs.com/package/jsio
+  install: npm install jsio
+  official: true
+  version: 2.2.5
+  published: '2016-08-18'
+  repository: https://github.com/play-co/js.io
+  kind: module-system
+  note: js.io module and class system used by devkit.
+- language: javascript
+  registry: npm
+  name: ff
+  url: https://www.npmjs.com/package/ff
+  install: npm install ff
+  official: true
+  version: 0.2.2
+  published: '2017-06-29'
+  repository: https://github.com/play-co/ff
+  kind: library
+  note: Asynchronous flow-control library.
+not_first_party:
+- name: "@playco/ng-api"
+  registry: npm
+  url: https://www.npmjs.com/package/@playco/ng-api
+  version: 1.1.0
+  published: '2025-02-25'
+  verdict: rejected
+  reason: >-
+    Name collision. Despite the "@playco" scope and an "OpenAPI client" description, the npm maintainers are
+    konstantin@playnetwork.co and arthur@playnetwork.co — this package belongs to PlayNetwork, a different
+    company. Not attributed to Playco and no contract derived from it.
+- name: pixi.js
+  registry: npm
+  url: https://www.npmjs.com/package/pixi.js
+  verdict: not-claimed
+  reason: >-
+    Playco acquired Goodboy Digital (2021), the studio that created PixiJS, and markets PixiJS on play.co/tech,
+    but the released package is published from the independent pixijs organization, not play-co. The play-co
+    org's `pixijs` repo is a fork. Recorded for context, not counted as a Playco package.

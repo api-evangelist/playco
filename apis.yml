@@ -1,7 +1,17 @@
 aid: playco
 name: Playco
-description: 'Playco is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Playco is an instant-play gaming company founded in 2020 by Justin Waldron, Michael Carter, Takeshi Otsuka and
+  Teddy Cross, headquartered in Tokyo with teams worldwide. It builds HTML5 games that run inside social and
+  communication platforms without an app install — EverWing on Facebook, Snake Squad on Snap Games, Heads Up! for
+  Zoom, Sway Stories on TikTok and Trip Royale on LINE — and reached unicorn status on a $100M Series A. Its
+  technology stack, described on play.co/tech, is developer tooling rather than a public web API: PixiJS (the
+  open-source HTML5 rendering/creation engine it acquired with Goodboy Digital in 2021), Odie3D (a 3D extension
+  framework), GCInstant (a client-side JavaScript library wrapping platform SDKs and analytics) and Replicant (a
+  backend-as-a-service state manager for instant games). Playco publishes no developer portal, no API reference and
+  no machine-readable contract; its public code surface is the play-co GitHub organization, which is the renamed
+  Game Closure organization and carries the legacy devkit HTML5 game platform, js.io and ff.
+image: https://cdn.prod.website-files.com/5ef5b52561b705cdd979275e/5f6bf7aa03bbe535e0b56505_Open%20Graph%20Image.png
 url: https://raw.githubusercontent.com/api-evangelist/playco/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
@@ -12,6 +22,15 @@ created: '2026-08-26'
 modified: '2026-08-26'
 tags:
 - Company
+- Gaming
+- Games
+- Instant Games
+- HTML5
+- Game Engine
+- Mobile Games
+- Social Gaming
+- Developer Tools
+- Open Source
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +38,54 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/playco-domain-security.yml
 - type: Website
-  url: https://forgeglobal.com/playco_stock/
+  url: https://www.play.co/
+- type: About
+  url: https://www.play.co/about
+- type: Support
+  url: http://support.play.co/en/
+- type: TermsOfService
+  url: https://www.play.co/tos
+- type: PrivacyPolicy
+  url: https://www.play.co/privacy
+- type: GitHubOrganization
+  url: https://github.com/play-co
+- type: LinkedIn
+  url: https://www.linkedin.com/company/playco
+- type: Press
+  url: https://www.play.co/news
+- type: Packages
+  url: packages/playco-packages.yml
+- type: Plans
+  url: plans/playco-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/playco-rate-limits.yml
+- type: LLMsTxt
+  url: llms/playco-llms.txt
+x-enrichment:
+  date: '2026-08-26'
+  status: minimal
+  artifacts_added: 6
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Playco is a consumer instant-games studio with no developer program at all — the play.co navigation is
+    About / Games / Tech / Career / Discover, api.play.co, developer.play.co and docs.play.co do not resolve,
+    and the three technologies it markets to developers (GCInstant, Replicant, Odie3D) ship as internal
+    client-side game tooling that is not published to any package registry.
+  evidence:
+  - url: https://www.play.co/developers
+    status: 404
+  - url: https://www.play.co/openapi.json
+    status: 404
+  - url: https://api.play.co/
+    status: '<no response>'
+  - url: https://www.play.co/.well-known/agent-card.json
+    status: 404
+  - url: https://www.play.co/tech
+    status: 200
+  checked: '2026-08-26'

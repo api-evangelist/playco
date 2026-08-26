@@ -1,0 +1,18 @@
+generated: '2026-08-26'
+method: searched
+source: https://www.play.co/
+note: >-
+  Playco publishes no pricing, plans or developer tiers of any kind. It is a consumer game studio: its
+  revenue comes from free-to-play instant games distributed inside Facebook, LINE, Snap, TikTok and Zoom,
+  not from a metered developer product. The site navigation is About / Games / Tech / Career / Discover with
+  a Privacy and Terms footer — there is no pricing page, no signup, no console and no "contact sales" API
+  form. This is an honest zero, not an unfound page.
+plan_count: 0
+plans: []
+evidence:
+- url: https://www.play.co/
+  status: 200
+  finding: navigation and footer carry no pricing or signup link
+- url: https://www.play.co/tech
+  status: 200
+  finding: technology page describes PixiJS, Odie3D, GCInstant and Replicant with no commercial terms

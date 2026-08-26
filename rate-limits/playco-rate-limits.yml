@@ -1,0 +1,22 @@
+generated: '2026-08-26'
+method: searched
+source: https://www.play.co/
+note: >-
+  No rate limits are documented because Playco publishes no API. There is no developer portal, no API
+  reference and no base URL (api.play.co does not resolve), so there is no request budget, no window and no
+  RateLimit-*/Retry-After header surface to record. Honest zero.
+limit_count: 0
+rate_limits: []
+headers: []
+evidence:
+- url: https://api.play.co/
+  status: '<no response>'
+  finding: host does not resolve
+- url: https://developer.play.co/
+  status: '<no response>'
+  finding: host does not resolve
+- url: https://docs.play.co/
+  status: '<no response>'
+  finding: host does not resolve
+- url: https://www.play.co/developers
+  status: 404

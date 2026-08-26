@@ -1,0 +1,60 @@
+generated: '2026-08-26'
+method: probed
+source: live GET probes of /.well-known/* on every host named in apis.yml
+note: >-
+  Playco's own hosts serve no /.well-known documents. www.play.co is a Webflow site that answers every
+  /.well-known/* path with an 88-byte "Invalid .well-known request" 404 (a control probe for a random path
+  returned the identical body, so there is no soft-200 catch-all here). The single 200 in this probe is
+  support.play.co/.well-known/security.txt, and it is NOT Playco's: the file is Intercom's, served by the
+  Intercom help-center platform that hosts Playco's support site on a custom domain, and it declares
+  "Canonical: https://app.intercom.com/.well-known/security.txt" with Contact bugcrowd.com/intercom and
+  security@intercom.com. It is recorded here as a vendor document and deliberately earns Playco NO
+  SecurityTxt or WellKnown pointer — crediting it would attribute Intercom's disclosure program to Playco.
+hit_count: 0
+vendor_document_count: 1
+hosts:
+- host: https://www.play.co
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  soft_404_control:
+    path: /.well-known/aaaa-control-probe
+    status: 404
+    bytes: 88
+    verdict: honest-404
+- host: http://support.play.co
+  note: >-
+    Intercom-hosted help center on a Playco custom domain; the https listener presents an intercom.help
+    certificate whose SAN list does not include support.play.co, so the URL Playco links from its own
+    footer (https://support.play.co/) fails TLS verification and only http answers.
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    owner: intercom
+    canonical: https://app.intercom.com/.well-known/security.txt
+    counted: false
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
