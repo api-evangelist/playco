@@ -11,6 +11,17 @@ description: >-
   backend-as-a-service state manager for instant games). Playco publishes no developer portal, no API reference and
   no machine-readable contract; its public code surface is the play-co GitHub organization, which is the renamed
   Game Closure organization and carries the legacy devkit HTML5 game platform, js.io and ff.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://cdn.prod.website-files.com/5ef5b52561b705cdd979275e/5f6bf7aa03bbe535e0b56505_Open%20Graph%20Image.png
 url: https://raw.githubusercontent.com/api-evangelist/playco/refs/heads/main/apis.yml
 x-type: company
